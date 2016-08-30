@@ -11,11 +11,32 @@ Caso você sinta necessidade de mais detalhes, pode ler o código e os comentár
 Sendo um shell script, a ideia é que você tenha um sistema operacional GNU/Linux (ou seja, não o Windows), abra o terminal e use-o para invocar o script. Você deve ter uma conexão à internet, obviamente. Se alguma coisa der errado, não deixe de me relatar (bug report).
 
 ## Anonimato?
-Ao passo que o script não informa diretamente quem está baixando, através de cookies/login, ele não confere pleno anonimato a quem o usa. Outros dados podem permitir deduções sobre que programa está acessando o site do Instagram, e mesmo quem está usando o programa. Nada diferente de qualquer navegador WEB... Afinal, o propósito é poupar todo o trabalho manual de abrir cada foto em tamanho máximo, baixar e passar para a próxima, não "hackear" o sistema para puxar fotos "privadas".
+Nem sim, nem não.
 
-Detalho abaixo informações que são entregues. Se alguém se espantar, deveria seriamente repensar se continuará usando o cliente web/app de celular, pois são piores!
-* endereço IP: se você rodar o script da sua casa, alguém pode analisar que quem usa esse IP é você. Para ocultar seu IP "real", medidas externas ao script são necessárias, que cabem ao usuário interessado analisar;
-* informações "básicas": resolução da tela, sistema operacional, etc e "navegador" são entregues. Nesse "navegador" é que é entregue a informação que é um programa de download, mas apenas genericamente;
-* comportamento: a velocidade entre a requisição de uma foto e outra, e mesmo o padrão de requisição de arquivos revelam 'sem querer' que se trata de um programa.
+<table>
+<tr>
+<th colspan="2">Exemplo de informações entregues para o Instagram nos downloads:</th>
+</tr>
+<tr>
+<th width="50%">Seu navegador</th>
+<th width="50%">Esse script</th>
+</tr>
+<tr>
+<td>"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12"</td>
+<td>"Wget"</td>
+</tr>
+<tr>
+<td>Endereço IP "255.255.255.255"</td>
+<td>Endereço IP "255.255.255.255"</td>
+</tr>
+<tr>
+<td>Cookie "dbfdg5d776df6sfsf7d78s"</td>
+<td>---</td>
+</tr>
+</table>
 
-As informações "básicas" e o comportamento podem ser alterados no código, mas não vejo motivo/vantagem para tal; se você vê, pode discutir comigo ou fazer seu próprio fork. Quanto ao IP, como disse, não cabe num mero script, é solução externa.
+Vê-se que, com o script, muito menos informações identificadoras são enviadas (os cookies são especialmente problemáticos, pois são códigos únicos). As duas informações entregues o são porquê: 1) IP não cabe ao script ocultar; 2) o comando wget para download é ele próprio e não vejo porquê ocultar. O site sendo acessado porém, pode até mesmo descobrir mais detalhes do sistema do usuário, creio que com JavaScript (resolução da tela, tempo de visita, origem e destino, etc).
+
+Note porém, que informações ainda podem ser deduzidas no caso do script! Essas seriam informações comportamentais do usuário executando o script, como o horário de uso e as contas-alvo (ou uma categoria onde as contas possam ser agrupadas, como o sexo ou país). O script mesmo tem um comportamento próprio pertinente à sua versão, por exemplo, ignorar os vídeos (versões bem do começo) ou baixar todos os índices todas as vezes (algumas versões depois).
+
+No fim, ainda é melhor que o navegador.
