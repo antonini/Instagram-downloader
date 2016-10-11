@@ -37,6 +37,6 @@ Nem sim, nem não.
 
 Vê-se que, com o script, muito menos informações identificadoras são enviadas (os cookies são especialmente problemáticos, pois são códigos únicos). As duas informações entregues o são porquê: 1) IP não cabe ao script ocultar; 2) o comando wget para download é ele próprio e não vejo porquê ocultar. O site sendo acessado porém, pode até mesmo descobrir mais detalhes do sistema do usuário, creio que com JavaScript (resolução da tela, tempo de visita, origem e destino, etc).
 
-Note porém, que informações ainda podem ser deduzidas no caso do script! Essas seriam informações comportamentais do usuário executando o script, como o horário de uso e as contas-alvo (ou uma categoria onde as contas possam ser agrupadas, como o sexo ou país). O script mesmo tem um comportamento próprio pertinente à sua versão, por exemplo, ignorar os vídeos (versões bem do começo) ou baixar todos os índices todas as vezes (algumas versões depois).
+Note porém, que informações ainda podem ser deduzidas no caso do script! Essas seriam informações comportamentais do usuário executando o script, como o horário de uso e as contas-alvo (ou uma categoria onde as contas possam ser agrupadas, como o sexo ou país). O script mesmo tem um comportamento próprio pertinente à sua versão, por exemplo, ignorar os vídeos (versões bem do começo) ou baixar todos os índices todas as vezes (algumas versões depois); até mesmo como ele reage quando dá erro: ele consegue detectar e corrigir, ou ele para tudo?
 
 No fim, ainda é melhor que o navegador.
