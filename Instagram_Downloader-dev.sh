@@ -11,7 +11,7 @@ function linha_horizontal {
 
 function extrair_foto {	grep -o '"'$1'": "https://[a-z0-9/\._-]*\.jpg' $2 | cut -d'"' -f4; } #Curiosidade: terminar o link como .jpg.html faz uma arte ASCII da foto.
 
-function extrair_URL_video { grep -o '"'video_url'": "https://[a-z0-9/\._-]*\.mp4' -- $1 | cut -d'"' -f4; 
+function extrair_URL_video { grep -o '"'video_url'": "https://[a-z0-9/\._-]*\.mp4' -- $1 | cut -d'"' -f4; }
 
 function baixar_fotos {
 	linha_horizontal -;
